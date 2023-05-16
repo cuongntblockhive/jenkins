@@ -19,15 +19,15 @@ pipeline {
             steps {
                 sh '''
                     # Install VPN software (example: OpenVPN)
-                    sudo apt-get update
-                    sudo apt-get install -y openvpn
+                    apt-get update
+                    apt-get install -y openvpn
 
                     # Configure VPN credentials and connection
                     echo "VPN_USERNAME=Archaic.Cuong" >> vpn-config.env
                     echo "VPN_PASSWORD=Ax9slHb4$s" >> vpn-config.env
 
                     # Establish VPN connection
-                    sudo openvpn --config vpn-config.env --daemon
+                    openvpn --config vpn-config.env --daemon
 
                     # Wait for the VPN connection to be established
                     sleep 10
