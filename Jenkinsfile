@@ -1,10 +1,11 @@
 pipeline {
     agent any
 
+
     tools {
-        // Specify the installation of Node.js
-        nodejs 'nodejs'
+        nodejs "node" 
     }
+
     stages {
         stage("Test") {
             steps {
